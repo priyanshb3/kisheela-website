@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FAF5EC;
+  color: #231B14;
+}
+
+::selection {
+  background-color: #C6693E;
+  color: #FAF5EC;
+}
+
+/* visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #C6693E;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ornamental divider row, echoing the marigold/jasmine motif from the brief */
+.motif-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  color: #C6693E;
+  opacity: 0.55;
+}
+.motif-row .dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.paisley-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgba(198,105,62,0.14) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
