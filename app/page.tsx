@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import {
   Sparkles,
@@ -187,7 +188,9 @@ export default function Home() {
                 </a>
               ))}
               <a
-                href=""
+                href="https://forms.gle/QuLW9ssitipjwWtQ9"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
                 className="mt-2 rounded-full bg-terracotta px-6 py-2.5 text-center text-sm font-medium text-cream"
               >
@@ -202,11 +205,11 @@ export default function Home() {
       <section id="top" className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src=""
-            alt=""
+            src="/images/hero.jpg"
+            alt="Students standing together"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/85 to-cream/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/60 to-cream/20" />
         </div>
 
         <div className="relative mx-auto max-w-content px-6 pb-24 pt-14 sm:pb-32 sm:pt-20">
@@ -239,7 +242,9 @@ export default function Home() {
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
-              href="#volunteer"
+              href="https://forms.gle/QuLW9ssitipjwWtQ9"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-terracotta px-7 py-3.5 text-sm font-medium text-cream shadow-md shadow-terracotta/25 transition-transform hover:scale-[1.03] hover:bg-clay"
             >
               Join the Movement <ArrowRight size={16} />
