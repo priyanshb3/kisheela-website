@@ -130,7 +130,36 @@ const TESTIMONIALS = [
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(1);
-  const [formStatus, setFormStatus] = useState<"idle" | "sent">("idle");
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "sent">("idle");
+
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setFormStatus("sending");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      form.reset();
+      setFormStatus("sent");
+
+      setTimeout(() => {
+        setFormStatus("idle");
+      }, 3000);
+    } else {
+      alert("Something went wrong. Please try again.");
+      setFormStatus("idle");
+    }
+  };
 
   return (
     <main className="bg-cream text-ink">
@@ -547,18 +576,27 @@ export default function Home() {
           <div className="rounded-2xl border border-ink/8 bg-sand/40 p-8">
             <h3 className="font-display text-2xl text-ink">Send a message</h3>
             <form
+              onSubmit={handleSubmit}
               className="mt-6 space-y-4"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setFormStatus("sent");
-              }}
             >
+              <input
+                type="hidden"
+                name="access_key"
+                value="18ebce84-8d21-4ba2-90db-565089ff2801"
+              />
+
+              <input
+                type="hidden"
+                name="subject"
+                value="New message from Kisheela Website"
+              />  
               <div>
                 <label htmlFor="name" className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-ink/50">
                   Full Name
                 </label>
                 <input
                   id="name"
+                  name="name"
                   type="text"
                   required
                   placeholder="Your full name"
@@ -571,6 +609,7 @@ export default function Home() {
                 </label>
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   required
                   placeholder="you@example.com"
@@ -583,6 +622,7 @@ export default function Home() {
                 </label>
                 <input
                   id="phone"
+                  name="phone"
                   type="tel"
                   placeholder="+91 12345 67890"
                   className="w-full rounded-lg border border-ink/12 bg-cream px-4 py-3 text-sm text-ink placeholder:text-ink/35 focus:border-terracotta"
@@ -594,6 +634,7 @@ export default function Home() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   required
                   rows={4}
                   placeholder="How would you like to get involved?"
