@@ -81,8 +81,7 @@ const CO_FOUNDERS = [
   {
     name: "Radhika Bansal",
     tags: ["Entrepreneur", "Community Builder", "Changemaker"],
-    image:
-      "03174edc-4112-4716-aaef-c201403439bd.jpg",
+    image: "03174edc-4112-4716-aaef-c201403439bd.jpg",
     bio: "Based in Bulandshahr, Uttar Pradesh, Radhika Bansal is the proprietor of R.K. & Daughters. Alongside building her business, she has always believed that true success is measured by the lives we uplift. Driven by a deep passion for women's empowerment and equal access to education, she co-founded Kisheela as a community movement that empowers women through skill development and leadership, while helping underprivileged children receive quality education and brighter opportunities.",
     quote:
       "When a woman is empowered, a family grows stronger. When a child is educated, an entire generation moves forward.",
