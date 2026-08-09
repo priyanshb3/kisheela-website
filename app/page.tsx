@@ -90,7 +90,7 @@ const CO_FOUNDERS = [
     name: "Priyanka Bansal",
     tags: ["Businesswoman"],
     image:
-      "/03174edc-4112-4716-aaef-c201403439bd.jpg",
+      "/images/03174edc-4112-4716-aaef-c201403439bd.jpg",
     bio: "Priyanka Bansal is the Proprietor of Krishna Marketing Company and Co-Founder of Kisheela. Driven by a passion for women's empowerment and education, she is committed to creating opportunities that help women and children build brighter, more independent futures.",
     quote:
       "Real change doesn't arrive from outside a community — it's built by the people already living inside it.",
