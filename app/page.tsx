@@ -82,7 +82,7 @@ const CO_FOUNDERS = [
     name: "Radhika Bansal",
     tags: ["Entrepreneur", "Community Builder", "Changemaker"],
     image:
-      "03174edc-4112-4716-aaef-c201403439bd.jpg",
+      "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop",
     bio: "Based in Bulandshahr, Uttar Pradesh, Radhika Bansal is the proprietor of R.K. & Daughters. Alongside building her business, she has always believed that true success is measured by the lives we uplift. Driven by a deep passion for women's empowerment and equal access to education, she co-founded Kisheela as a community movement that empowers women through skill development and leadership, while helping underprivileged children receive quality education and brighter opportunities.",
     quote:
       "When a woman is empowered, a family grows stronger. When a child is educated, an entire generation moves forward.",
@@ -91,7 +91,7 @@ const CO_FOUNDERS = [
     name: "Priyanka Bansal",
     tags: ["Businesswoman"],
     image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop",
+      "/images/03174edc-4112-4716-aaef-c201403439bd.jpg",
     bio: "Priyanka Bansal is the Proprietor of Krishna Marketing Company and Co-Founder of Kisheela. Driven by a passion for women's empowerment and education, she is committed to creating opportunities that help women and children build brighter, more independent futures.",
     quote:
       "Real change doesn't arrive from outside a community — it's built by the people already living inside it.",
