@@ -21,117 +21,113 @@ import {
   Menu,
   X,
 } from "lucide-react";
-
-const NAV_LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Programs", href: "#programs" },
-  { label: "Founders", href: "#founders" },
-  { label: "Contact", href: "#contact" },
-];
-
-const ABOUT_CARDS = [
-  {
-    title: "Rooted in Compassion.\nGrowing Through Community.",
-    body: "Kisheela is a community movement born from the belief that lasting change begins with people who choose to care. Founded in Bulandshahr as a social impact initiative by R.K. & Daughters, Kisheela works to empower women through skill development, leadership opportunities, and education while supporting children from underserved communities with scholarships, learning resources, and mentorship. As the movement grows across NCR, our vision remains unchanged: to create communities where every woman can pursue independence and every child has the opportunity to dream, learn, and thrive.",
-  },
-  {
-    title: "Child Education",
-    body: "Every child holds the potential to transform their family's future. We remove the barriers — financial, social, and geographic — so no child is left behind on the basis of circumstance.",
-  },
-  {
-    title: "Community Development",
-    body: "Lasting change requires collective action. We build bridges between individuals, institutions, and ideas — fostering an ecosystem where communities thrive together.",
-  },
-];
-
-const PILLARS = [
-  {
-    icon: Sparkles,
-    title: "Women's Skill Development",
-    body: "Practical, market-aligned training in tailoring, handicrafts, digital literacy, and financial management — giving women the tools to earn independently.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Girl Child Education",
-    body: "Bridging the enrolment gap for girls through community mobilisation, remedial support, and safe learning environments that families trust.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Educational Scholarships",
-    body: "Merit and need-based scholarships ensuring financial constraints never derail a child's educational journey from primary school through higher education.",
-  },
-  {
-    icon: Mic2,
-    title: "Leadership Workshops",
-    body: "Structured sessions on public speaking, negotiation, community organising, and self-advocacy — nurturing the next generation of women leaders.",
-  },
-  {
-    icon: Megaphone,
-    title: "Community Awareness",
-    body: "Health, hygiene, legal rights, and civic participation campaigns that inform and mobilise entire neighbourhoods toward collective progress.",
-  },
-  {
-    icon: UserPlus,
-    title: "Membership",
-    body: "Connecting young women with professionals, entrepreneurs, and educators who invest time, guidance, and resources into their growth.",
-  },
-];
-
-const CO_FOUNDERS = [
-  {
-    name: "Radhika Bansal",
-    tags: ["Entrepreneur", "Community Builder", "Changemaker"],
-    image:
-      "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop",
-    bio: "Based in Bulandshahr, Uttar Pradesh, Radhika Bansal is the proprietor of R.K. & Daughters. Alongside building her business, she has always believed that true success is measured by the lives we uplift. Driven by a deep passion for women's empowerment and equal access to education, she co-founded Kisheela as a community movement that empowers women through skill development and leadership, while helping underprivileged children receive quality education and brighter opportunities.",
-    quote:
-      "When a woman is empowered, a family grows stronger. When a child is educated, an entire generation moves forward.",
-  },
-  {
-    name: "Priyanka Bansal",
-    tags: ["Businesswoman"],
-    image:
-      "/images/03174edc-4112-4716-aaef-c201403439bd.jpg",
-    bio: "Priyanka Bansal is the Proprietor of Krishna Marketing Company and Co-Founder of Kisheela. Driven by a passion for women's empowerment and education, she is committed to creating opportunities that help women and children build brighter, more independent futures.",
-    quote:
-      "Real change doesn't arrive from outside a community — it's built by the people already living inside it.",
-  },
-];
-
-const STATS = [
-  { label: "Women Empowered", value: "450+" },
-  { label: "Children Supported", value: "620+" },
-  { label: "Scholarships Provided", value: "180+" },
-  { label: "Community Workshops", value: "95+" },
-  { label: "Volunteers", value: "60+" },
-];
-
-const TESTIMONIALS = [
-  {
-    quote:
-      "Kisheela gave me the confidence I never knew I had. The leadership workshop changed how I see myself — not just as a mother, but as someone whose voice matters in this community.",
-    name: "Participant Name",
-    role: "Leadership Program, Bulandshahr",
-  },
-  {
-    quote:
-      "My daughter received a scholarship through Kisheela, and it was the first in our family to attend college. This movement has changed our family's story forever.",
-    name: "Participant Name",
-    role: "Scholarship Program, Parent",
-  },
-  {
-    quote:
-      "Volunteering with Kisheela showed me that sustainable change is possible when it comes from within the community. I leave every session more inspired than I arrived.",
-    name: "Volunteer Name",
-    role: "Volunteer, NCR Program",
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
+import { LanguageToggle } from "@/components/LanguageToggle";
 
 export default function Home() {
+  const { t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(1);
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "sent">("idle");
 
+  const NAV_LINKS = [
+    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.programs"), href: "#programs" },
+    { label: t("nav.founders"), href: "#founders" },
+    { label: t("nav.contact"), href: "#contact" },
+  ];
+
+  const ABOUT_CARDS = [
+    {
+      title: t("about.c1Title"),
+      body: t("about.c1Body"),
+    },
+    {
+      title: t("about.c2Title"),
+      body: t("about.c2Body"),
+    },
+    {
+      title: t("about.c3Title"),
+      body: t("about.c3Body"),
+    },
+  ];
+
+  const PILLARS = [
+    {
+      icon: Sparkles,
+      title: t("pillars.p1Title"),
+      body: t("pillars.p1Body"),
+    },
+    {
+      icon: GraduationCap,
+      title: t("pillars.p2Title"),
+      body: t("pillars.p2Body"),
+    },
+    {
+      icon: GraduationCap,
+      title: t("pillars.p3Title"),
+      body: t("pillars.p3Body"),
+    },
+    {
+      icon: Mic2,
+      title: t("pillars.p4Title"),
+      body: t("pillars.p4Body"),
+    },
+    {
+      icon: Megaphone,
+      title: t("pillars.p5Title"),
+      body: t("pillars.p5Body"),
+    },
+    {
+      icon: UserPlus,
+      title: t("pillars.p6Title"),
+      body: t("pillars.p6Body"),
+    },
+  ];
+
+  const CO_FOUNDERS = [
+    {
+      name: t("founders.f1Name"),
+      tags: [t("founders.f1Tag1"), t("founders.f1Tag2"), t("founders.f1Tag3")],
+      image:
+        "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop",
+      bio: t("founders.f1Bio"),
+      quote: t("founders.f1Quote"),
+    },
+    {
+      name: t("founders.f2Name"),
+      tags: [t("founders.f2Tag1")],
+      image: "/images/03174edc-4112-4716-aaef-c201403439bd.jpg",
+      bio: t("founders.f2Bio"),
+      quote: t("founders.f2Quote"),
+    },
+  ];
+
+  const STATS = [
+    { label: t("stats.s1Label"), value: "450+" },
+    { label: t("stats.s2Label"), value: "620+" },
+    { label: t("stats.s3Label"), value: "180+" },
+    { label: t("stats.s4Label"), value: "95+" },
+    { label: t("stats.s5Label"), value: "60+" },
+  ];
+
+  const TESTIMONIALS = [
+    {
+      quote: t("testimonials.t1Quote"),
+      name: t("testimonials.t1Name"),
+      role: t("testimonials.t1Role"),
+    },
+    {
+      quote: t("testimonials.t2Quote"),
+      name: t("testimonials.t2Name"),
+      role: t("testimonials.t2Role"),
+    },
+    {
+      quote: t("testimonials.t3Quote"),
+      name: t("testimonials.t3Name"),
+      role: t("testimonials.t3Role"),
+    },
+  ];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -183,24 +179,27 @@ export default function Home() {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex lg:items-center lg:gap-4">
+            <LanguageToggle />
             <a
               href="https://forms.gle/QuLW9ssitipjwWtQ9"
               target="_blank"
               rel="noopener noreferrer"
-              className="ounded-full bg-terracotta px-6 py-2.5 text-sm font-medium text-cream shadow-sm shadow-terracotta/30 transition-transform hover:scale-[1.03] hover:bg-clay"  
+              className="rounded-full bg-terracotta px-6 py-2.5 text-sm font-medium text-cream shadow-sm shadow-terracotta/30 transition-transform hover:scale-[1.03] hover:bg-clay"
             >
-              Join the Movement
+              {t("nav.join")}
             </a>
           </div>
 
-          <button
-            className="lg:hidden"
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-3 lg:hidden">
+            <LanguageToggle />
+            <button
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {menuOpen && (
@@ -223,7 +222,7 @@ export default function Home() {
                 onClick={() => setMenuOpen(false)}
                 className="mt-2 rounded-full bg-terracotta px-6 py-2.5 text-center text-sm font-medium text-cream"
               >
-                Join the Movement
+                {t("nav.join")}
               </a>
             </nav>
           </div>
@@ -244,29 +243,29 @@ export default function Home() {
         <div className="relative mx-auto max-w-content px-6 pb-24 pt-14 sm:pb-32 sm:pt-20">
           <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-terracotta/25 bg-cream/80 px-4 py-2 text-xs font-medium tracking-wide text-ink/70">
             <MapPin size={14} className="text-terracotta" />
-            Bulandshahr &amp; NCR
+            {t("hero.location")}
           </span>
 
           <div className="mb-5 flex flex-wrap gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-terracotta">
-            <span>Community Movement</span>
+            <span>{t("hero.tag1")}</span>
             <span className="text-ink/30">·</span>
-            <span>Rooted in UP</span>
+            <span>{t("hero.tag2")}</span>
             <span className="text-ink/30">·</span>
-            <span>Growing Across NCR</span>
+            <span>{t("hero.tag3")}</span>
           </div>
 
           <h1 className="max-w-2xl font-display text-5xl leading-[1.08] text-ink sm:text-6xl">
-            Every Woman Deserves{" "}
-            <em className="text-terracotta not-italic font-medium italic">Opportunity.</em>
+            {t("hero.titleLine1")}{" "}
+            <em className="text-terracotta not-italic font-medium italic">
+              {t("hero.titleOpportunity")}
+            </em>
             <br />
-            Every Child Deserves <em className="text-sage font-medium italic">Hope.</em>
+            {t("hero.titleLine2")}{" "}
+            <em className="text-sage font-medium italic">{t("hero.titleHope")}</em>
           </h1>
 
           <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-ink/70">
-            Kisheela is a community movement dedicated to empowering women through education,
-            skill development, leadership and opportunity — while helping children from
-            underserved communities gain access to learning, scholarships, and brighter
-            futures.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -276,27 +275,25 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-terracotta px-7 py-3.5 text-sm font-medium text-cream shadow-md shadow-terracotta/25 transition-transform hover:scale-[1.03] hover:bg-clay"
             >
-              Join the Movement <ArrowRight size={16} />
+              {t("hero.btnJoin")} <ArrowRight size={16} />
             </a>
             <a
               href="#programs"
               className="rounded-full border border-ink/15 bg-cream/70 px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:border-terracotta/40 hover:text-terracotta"
             >
-              Explore Our Work
+              {t("hero.btnExplore")}
             </a>
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            {["450+ Women Empowered", "620+ Children Supported", "Bulandshahr & NCR"].map(
-              (item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-ink/10 bg-cream/80 px-4 py-2 text-xs font-medium text-ink/70"
-                >
-                  {item}
-                </span>
-              )
-            )}
+            {[t("hero.badge1"), t("hero.badge2"), t("hero.badge3")].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-ink/10 bg-cream/80 px-4 py-2 text-xs font-medium text-ink/70"
+              >
+                {item}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -312,25 +309,24 @@ export default function Home() {
       <section id="about" className="paisley-bg">
         <div className="mx-auto max-w-content px-6 py-8 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta">
-            About Kisheela
+            {t("about.tagline")}
           </p>
           <h2 className="mx-auto mt-4 max-w-2xl font-display text-4xl text-ink sm:text-5xl text-balance">
-            A movement, not a charity.
+            {t("about.title")}
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-ink/70">
-            Kisheela means <em className="italic">ascent</em> — a rising. We are a community-led
-            social impact initiative rooted in Bulandshahr, Uttar Pradesh, growing across the
-            NCR region. We believe sustainable change is born from within communities, not
-            delivered from the outside.
+            {t("about.description")}
           </p>
 
           <div className="mt-12 grid gap-6 text-left sm:grid-cols-3">
-            {ABOUT_CARDS.map((card) => (
+            {ABOUT_CARDS.map((card, idx) => (
               <div
-                key={card.title}
+                key={idx}
                 className="rounded-2xl border border-terracotta/15 bg-cream/90 p-6 shadow-sm shadow-ink/5 transition-transform hover:-translate-y-1"
               >
-                <h3 className="font-display text-lg text-terracotta">{card.title}</h3>
+                <h3 className="font-display text-lg text-terracotta whitespace-pre-line">
+                  {card.title}
+                </h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink/65">{card.body}</p>
               </div>
             ))}
@@ -344,15 +340,14 @@ export default function Home() {
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta">
-                Our Programs
+                {t("pillars.tagline")}
               </p>
               <h2 className="mt-4 font-display text-4xl text-ink sm:text-5xl">
-                Six pillars of change.
+                {t("pillars.title")}
               </h2>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-ink/60">
-              Each program is designed to move giving, systemic impact — not temporary relief.
-              Together they form a complete ecosystem of empowerment.
+              {t("pillars.subtitle")}
             </p>
           </div>
 
@@ -376,13 +371,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MEET THE CO-FOUNDERS (renamed from "Meet the Founder") */}
+      {/* MEET THE CO-FOUNDERS */}
       <section id="founders" className="mx-auto max-w-content px-6 py-24">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta">
-          Meet the Co-Founders
+          {t("founders.tagline")}
         </p>
         <h2 className="mt-4 max-w-xl font-display text-4xl text-ink sm:text-5xl">
-          Two women, one belief.
+          {t("founders.title")}
         </h2>
 
         <div className="mt-14 space-y-16">
@@ -400,7 +395,7 @@ export default function Home() {
                   className="aspect-[4/5] w-full rounded-2xl object-cover shadow-lg shadow-ink/10"
                 />
                 <span className="absolute -bottom-4 left-4 rounded-xl bg-cream px-4 py-2 text-xs font-medium text-ink/70 shadow-md shadow-ink/10">
-                  Co-Founder, Kisheela
+                  {t("founders.role")}
                 </span>
               </div>
 
@@ -423,7 +418,7 @@ export default function Home() {
                     “{founder.quote}”
                   </p>
                   <cite className="mt-3 block text-sm not-italic text-terracotta">
-                    — {founder.name}, Co-Founder
+                    — {founder.name}, {t("founders.role")}
                   </cite>
                 </blockquote>
               </div>
@@ -436,10 +431,10 @@ export default function Home() {
       <section className="bg-ink text-cream">
         <div className="mx-auto max-w-content px-6 py-20 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta">
-            Our Impact
+            {t("stats.tagline")}
           </p>
-          <h2 className="mt-4 font-display text-4xl sm:text-5xl">Progress in numbers.</h2>
-          <p className="mt-4 text-sm text-cream/50">Values are updated each quarter.</p>
+          <h2 className="mt-4 font-display text-4xl sm:text-5xl">{t("stats.title")}</h2>
+          <p className="mt-4 text-sm text-cream/50">{t("stats.updatedNote")}</p>
 
           <div className="mt-14 grid grid-cols-2 gap-8 sm:grid-cols-5">
             {STATS.map((stat) => (
@@ -458,18 +453,18 @@ export default function Home() {
       <section className="bg-sand/50">
         <div className="mx-auto max-w-content px-6 py-24 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta">
-            Stories
+            {t("testimonials.tagline")}
           </p>
           <h2 className="mt-4 font-display text-4xl text-ink sm:text-5xl">
-            Voices from the movement.
+            {t("testimonials.title")}
           </h2>
 
           <div className="mt-14 grid gap-6 lg:grid-cols-3">
-            {TESTIMONIALS.map((t, i) => {
+            {TESTIMONIALS.map((testimonialItem, i) => {
               const active = i === activeTestimonial;
               return (
                 <button
-                  key={t.name + i}
+                  key={testimonialItem.name + i}
                   onClick={() => setActiveTestimonial(i)}
                   className={`rounded-2xl p-7 text-left transition-colors ${
                     active
@@ -477,19 +472,21 @@ export default function Home() {
                       : "bg-cream text-ink/75 border border-ink/8 hover:border-terracotta/30"
                   }`}
                 >
-                  <p className="font-display text-lg italic leading-snug">"{t.quote}"</p>
+                  <p className="font-display text-lg italic leading-snug">
+                    "{testimonialItem.quote}"
+                  </p>
                   <div className="mt-6 flex items-center gap-3">
                     <span
                       className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-medium ${
                         active ? "bg-terracotta text-cream" : "bg-terracotta/10 text-terracotta"
                       }`}
                     >
-                      {t.name.charAt(0)}
+                      {testimonialItem.name.charAt(0)}
                     </span>
                     <div>
-                      <p className="text-sm font-medium">{t.name}</p>
+                      <p className="text-sm font-medium">{testimonialItem.name}</p>
                       <p className={`text-xs ${active ? "text-cream/60" : "text-ink/50"}`}>
-                        {t.role}
+                        {testimonialItem.role}
                       </p>
                     </div>
                   </div>
@@ -518,39 +515,40 @@ export default function Home() {
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta">
-              Get In Touch
+              {t("contact.tagline")}
             </p>
             <h2 className="mt-4 font-display text-4xl text-ink sm:text-5xl">
-              Let's grow <em className="italic text-terracotta font-medium">together.</em>
+              {t("contact.titleLine")}{" "}
+              <em className="italic text-terracotta font-medium">{t("contact.titleEm")}</em>
             </h2>
 
             <ul className="mt-8 space-y-5 text-sm text-ink/70">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="mt-0.5 shrink-0 text-terracotta" />
                 <div>
-                  <p className="font-medium text-ink">Office Address</p>
-                  <p>Bulandshahr, Uttar Pradesh, India</p>
+                  <p className="font-medium text-ink">{t("contact.addressLabel")}</p>
+                  <p>{t("contact.addressValue")}</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={18} className="mt-0.5 shrink-0 text-terracotta" />
                 <div>
-                  <p className="font-medium text-ink">Email</p>
+                  <p className="font-medium text-ink">{t("contact.emailLabel")}</p>
                   <p>hello@kisheela.org</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={18} className="mt-0.5 shrink-0 text-terracotta" />
                 <div>
-                  <p className="font-medium text-ink">Phone</p>
+                  <p className="font-medium text-ink">{t("contact.phoneLabel")}</p>
                   <p>+91 12345 67890</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Clock size={18} className="mt-0.5 shrink-0 text-terracotta" />
                 <div>
-                  <p className="font-medium text-ink">Working Hours</p>
-                  <p>Mon – Sat, 9:00 AM – 6:00 PM</p>
+                  <p className="font-medium text-ink">{t("contact.hoursLabel")}</p>
+                  <p>{t("contact.hoursValue")}</p>
                 </div>
               </li>
             </ul>
@@ -569,16 +567,13 @@ export default function Home() {
             </div>
 
             <div className="mt-8 flex h-52 items-center justify-center rounded-2xl border border-dashed border-ink/15 bg-sand/40 text-sm text-ink/40">
-              Interactive map goes here
+              Map (Bulandshahr, UP)
             </div>
           </div>
 
           <div className="rounded-2xl border border-ink/8 bg-sand/40 p-8">
-            <h3 className="font-display text-2xl text-ink">Send a message</h3>
-            <form
-              onSubmit={handleSubmit}
-              className="mt-6 space-y-4"
-            >
+            <h3 className="font-display text-2xl text-ink">{t("contact.formTitle")}</h3>
+            <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               <input
                 type="hidden"
                 name="access_key"
@@ -589,55 +584,67 @@ export default function Home() {
                 type="hidden"
                 name="subject"
                 value="New message from Kisheela Website"
-              />  
+              />
               <div>
-                <label htmlFor="name" className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-ink/50">
-                  Full Name
+                <label
+                  htmlFor="name"
+                  className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-ink/50"
+                >
+                  {t("contact.fullName")}
                 </label>
                 <input
                   id="name"
                   name="name"
                   type="text"
                   required
-                  placeholder="Your full name"
+                  placeholder={t("contact.fullNamePlaceholder")}
                   className="w-full rounded-lg border border-ink/12 bg-cream px-4 py-3 text-sm text-ink placeholder:text-ink/35 focus:border-terracotta"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-ink/50">
-                  Email
+                <label
+                  htmlFor="email"
+                  className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-ink/50"
+                >
+                  {t("contact.email")}
                 </label>
                 <input
                   id="email"
                   name="email"
                   type="email"
                   required
-                  placeholder="you@example.com"
+                  placeholder={t("contact.emailPlaceholder")}
                   className="w-full rounded-lg border border-ink/12 bg-cream px-4 py-3 text-sm text-ink placeholder:text-ink/35 focus:border-terracotta"
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-ink/50">
-                  Phone Number
+                <label
+                  htmlFor="phone"
+                  className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-ink/50"
+                >
+                  {t("contact.phone")}
                 </label>
                 <input
                   id="phone"
                   name="phone"
                   type="tel"
-                  placeholder="+91 12345 67890"
+                  placeholder={t("contact.phonePlaceholder")}
                   className="w-full rounded-lg border border-ink/12 bg-cream px-4 py-3 text-sm text-ink placeholder:text-ink/35 focus:border-terracotta"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-ink/50">
-                  Message
+                <label
+                  htmlFor="message"
+                  className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-ink/50"
+                >
+                  {t("contact.message")}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   required
                   rows={4}
-                  placeholder="How would you like to get involved?"
+                  placeholder={t("contact.messagePlaceholder")}
                   className="w-full rounded-lg border border-ink/12 bg-cream px-4 py-3 text-sm text-ink placeholder:text-ink/35 focus:border-terracotta"
                 />
               </div>
@@ -645,7 +652,11 @@ export default function Home() {
                 type="submit"
                 className="w-full rounded-full bg-terracotta px-6 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-clay"
               >
-                {formStatus === "sent" ? "Message sent ✓" : "Send Message"}
+                {formStatus === "sending"
+                  ? t("contact.sendingBtn")
+                  : formStatus === "sent"
+                  ? t("contact.sentBtn")
+                  : t("contact.sendBtn")}
               </button>
             </form>
           </div>
@@ -659,13 +670,12 @@ export default function Home() {
             <div>
               <p className="font-display text-2xl italic text-terracotta">✺ Kisheela</p>
               <p className="mt-3 max-w-xs text-sm leading-relaxed">
-                Empowering Women. Nurturing Children. A social impact initiative by
-                R.K. &amp; Daughters.
+                {t("footer.description")}
               </p>
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-cream/40">
-                Quick Links
+                {t("footer.quickLinks")}
               </p>
               <ul className="mt-4 space-y-2 text-sm">
                 {NAV_LINKS.map((link) => (
@@ -679,10 +689,10 @@ export default function Home() {
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-cream/40">
-                Contact
+                {t("footer.contactHeader")}
               </p>
               <ul className="mt-4 space-y-2 text-sm">
-                <li>Bulandshahr, Uttar Pradesh</li>
+                <li>{t("contact.addressValue")}</li>
                 <li>hello@kisheela.org</li>
                 <li>+91 12345 67890</li>
               </ul>
@@ -702,7 +712,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 border-t border-cream/10 pt-6 text-center text-xs text-cream/40">
-            © {new Date().getFullYear()} Kisheela. All rights reserved.
+            © {new Date().getFullYear()} Kisheela. {t("footer.rights")}
           </div>
         </div>
       </footer>
