@@ -196,8 +196,7 @@ export default function Home() {
     {
       name: t("founders.f1Name"),
       tags: [t("founders.f1Tag1"), t("founders.f1Tag2"), t("founders.f1Tag3")],
-      image:
-        "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop",
+      image:"/images/IMG_0482.jpg",
       bio: t("founders.f1Bio"),
       quote: t("founders.f1Quote"),
     },
